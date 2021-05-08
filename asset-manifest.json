@@ -1,0 +1,32 @@
+{
+  "files": {
+    "static/js/0.65e1e9ec.chunk.js": "/rug-zombie-frontend/static/js/0.65e1e9ec.chunk.js",
+    "static/js/0.65e1e9ec.chunk.js.map": "/rug-zombie-frontend/static/js/0.65e1e9ec.chunk.js.map",
+    "main.js": "/rug-zombie-frontend/static/js/main.62f512c9.chunk.js",
+    "main.js.map": "/rug-zombie-frontend/static/js/main.62f512c9.chunk.js.map",
+    "runtime-main.js": "/rug-zombie-frontend/static/js/runtime-main.600559b5.js",
+    "runtime-main.js.map": "/rug-zombie-frontend/static/js/runtime-main.600559b5.js.map",
+    "static/js/3.13ad9707.chunk.js": "/rug-zombie-frontend/static/js/3.13ad9707.chunk.js",
+    "static/js/3.13ad9707.chunk.js.map": "/rug-zombie-frontend/static/js/3.13ad9707.chunk.js.map",
+    "static/js/4.8ce10f07.chunk.js": "/rug-zombie-frontend/static/js/4.8ce10f07.chunk.js",
+    "static/js/4.8ce10f07.chunk.js.map": "/rug-zombie-frontend/static/js/4.8ce10f07.chunk.js.map",
+    "static/js/5.f74b4f8a.chunk.js": "/rug-zombie-frontend/static/js/5.f74b4f8a.chunk.js",
+    "static/js/5.f74b4f8a.chunk.js.map": "/rug-zombie-frontend/static/js/5.f74b4f8a.chunk.js.map",
+    "static/js/6.ba476f09.chunk.js": "/rug-zombie-frontend/static/js/6.ba476f09.chunk.js",
+    "static/js/6.ba476f09.chunk.js.map": "/rug-zombie-frontend/static/js/6.ba476f09.chunk.js.map",
+    "static/js/7.3a0db716.chunk.js": "/rug-zombie-frontend/static/js/7.3a0db716.chunk.js",
+    "static/js/7.3a0db716.chunk.js.map": "/rug-zombie-frontend/static/js/7.3a0db716.chunk.js.map",
+    "static/js/8.075eb850.chunk.js": "/rug-zombie-frontend/static/js/8.075eb850.chunk.js",
+    "static/js/8.075eb850.chunk.js.map": "/rug-zombie-frontend/static/js/8.075eb850.chunk.js.map",
+    "static/js/9.60b405bf.chunk.js": "/rug-zombie-frontend/static/js/9.60b405bf.chunk.js",
+    "static/js/9.60b405bf.chunk.js.map": "/rug-zombie-frontend/static/js/9.60b405bf.chunk.js.map",
+    "index.html": "/rug-zombie-frontend/index.html",
+    "static/js/3.13ad9707.chunk.js.LICENSE.txt": "/rug-zombie-frontend/static/js/3.13ad9707.chunk.js.LICENSE.txt",
+    "static/js/4.8ce10f07.chunk.js.LICENSE.txt": "/rug-zombie-frontend/static/js/4.8ce10f07.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.600559b5.js",
+    "static/js/3.13ad9707.chunk.js",
+    "static/js/main.62f512c9.chunk.js"
+  ]
+}
