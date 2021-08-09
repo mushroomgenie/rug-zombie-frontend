@@ -5,6 +5,7 @@ import { useWeb3React } from '@web3-react/core'
 import { BigNumber } from 'bignumber.js'
 import { MultiCall } from '@indexed-finance/multicall'
 import mausoleumAbi from 'config/abi/mausoleum.json'
+import { useParams } from 'react-router-dom'
 import Container from './components/Container'
 import CollectWinningsPopup from './components/CollectWinningsPopup'
 import SwiperProvider from './context/SwiperProvider'
@@ -12,10 +13,12 @@ import Desktop from './Desktop'
 import Mobile from './Mobile'
 import { getMausoleumContract } from '../../utils/contractHelpers'
 import { initialData } from '../../redux/fetch'
-import auctions from '../../redux/auctions'
 import { getMausoleumAddress } from '../../utils/addressHelpers'
 import useWeb3 from '../../hooks/useWeb3'
 
+interface ParamTypes {
+  aid: string
+}
 const Predictions = () => {
   const { isLg, isXl } = useMatchBreakpoints()
   const isDesktop = isLg || isXl
@@ -28,12 +31,11 @@ const Predictions = () => {
   const web3 = useWeb3()
 
   initialData(account)
-
-  const aid = auctions[0].aid
-
+  const { aid } = useParams<ParamTypes>()
+  const auctionId = parseInt(aid)
   useEffect(() => {
     if(account) {
-      getMausoleumContract().methods.userInfo(aid, account).call()
+      getMausoleumContract().methods.userInfo(auctionId, account).call()
         .then(userInfoRes => {
           setUserInfo({
             lastBidDate: parseInt(userInfoRes.lastBidDate),
@@ -42,14 +44,14 @@ const Predictions = () => {
           })
         })
     }
-  }, [account, aid])
+  }, [account, auctionId])
   useEffect(() => {
-    getMausoleumContract().methods.bidsLength(aid).call()
+    getMausoleumContract().methods.bidsLength(auctionId).call()
       .then(bidsLengthRes => {
         const multi = new MultiCall(web3);
         const inputs = [];
         for (let x = 0; x < parseInt(bidsLengthRes); x++) {
-          inputs.push({ target: getMausoleumAddress(), function: 'bidInfo', args: [aid, x] });
+          inputs.push({ target: getMausoleumAddress(), function: 'bidInfo', args: [auctionId, x] });
         }
 
           multi.multiCall(mausoleumAbi, inputs)
@@ -65,7 +67,7 @@ const Predictions = () => {
       })
     // setInterval(() => fetchBids(), 5000);
   // }
-  },[aid, refresh, web3])
+  },[auctionId, refresh, web3])
 
   return (
     <>
@@ -74,8 +76,8 @@ const Predictions = () => {
        </Helmet>
        <SwiperProvider>
         <Container >
-           {isDesktop ? <Desktop refresh={refresh} bids={bids} lastBidId={lastBidId} setRefresh={setRefresh} userInfo={userInfo} aid={aid}/> :
-            <Mobile refresh={refresh} bids={bids} lastBidId={lastBidId} setRefresh={setRefresh} userInfo={userInfo} aid={aid}/>}
+           {isDesktop ? <Desktop refresh={refresh} bids={bids} lastBidId={lastBidId} setRefresh={setRefresh} userInfo={userInfo} aid={auctionId}/> :
+            <Mobile refresh={refresh} bids={bids} lastBidId={lastBidId} setRefresh={setRefresh} userInfo={userInfo} aid={auctionId}/>}
            <CollectWinningsPopup />
          </Container>
        </SwiperProvider>
